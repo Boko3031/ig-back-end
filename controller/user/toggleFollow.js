@@ -15,14 +15,14 @@ export const ToggleFollow = async (req, res) => {
     if (isfollowed) {
       await userModel.findByIdAndUpdate(followingUserId, {
         following: followingUser.following.filter((person) => {
-          person.toString() !== followedUserId;
+          return person.toString() !== followedUserId;
         }),
       });
 
       await userModel.findByIdAndUpdate(followedUserId, {
-        followers: followedUser.followers.filter(
-          (items) => items.toString() !== followingUserId
-        ),
+        followers: followedUser.followers.filter((items) => {
+          return items.toString() !== followingUserId;
+        }),
       });
 
       res.status(200).json({ message: "success" });
