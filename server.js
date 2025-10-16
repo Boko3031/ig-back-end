@@ -4,6 +4,7 @@ import cors from "cors";
 import userRouter from "./route/user.route.js";
 import postRouter from "./route/post.route.js";
 import dotenv from "dotenv";
+import commentRouter from "./route/comment.route.js";
 
 dotenv.config();
 
@@ -19,6 +20,7 @@ connectDB();
 
 app.use("/", userRouter);
 app.use("/", postRouter);
+app.use("/comment", commentRouter);
 
 app.listen(PORT, () => {
   console.log(`App is running http://localhost:${PORT}/`);

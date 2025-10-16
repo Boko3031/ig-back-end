@@ -1,8 +1,8 @@
 import express from "express";
+import { middleware } from "../middleWare/AuthMiddle.js";
 import { createPost } from "../controller/post/createPost.js";
 import { searchPost } from "../controller/post/searchPost.js";
 import { allPost } from "../controller/post/allPost.js";
-import { middleware } from "../middleWare/AuthMiddle.js";
 import { togglePostLike } from "../controller/post/togglePostLike.js";
 
 const postRouter = express.Router();
