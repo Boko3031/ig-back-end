@@ -1,8 +1,7 @@
 import { userModel } from "../../Schema/SchemaUser.js";
 
-export const OnePerson = async (req, res) => {
-  const params = req.params;
-  const personId = params.personId;
-  const person = await userModel.findById({ personId });
+export const AnotherUserProfile = async (req, res) => {
+  const userId = req.params.userId;
+  const person = await userModel.findById(userId);
   res.status(200).json(person);
 };
