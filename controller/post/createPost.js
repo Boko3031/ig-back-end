@@ -9,5 +9,5 @@ export const createPost = async (req, res) => {
     caption: body.caption,
     images: body.images,
   });
-  res.status(200).json(response);
+  res.status(200).json({ message: "success" });
 };
