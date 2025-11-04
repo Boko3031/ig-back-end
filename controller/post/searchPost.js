@@ -6,5 +6,5 @@ export const searchPost = async (req, res) => {
   const posts = await postModel.find({
     userId: user._id,
   });
-  res.status(200).json({ message: "success" });
+  res.status(200).json(posts);
 };

@@ -24,7 +24,7 @@ export const signUp = async (req, res) => {
         data: response,
       },
       JWT_SECRET,
-      { expiresIn: "1h" }
+      { expiresIn: "24h" }
     );
     res.json(accesToken);
   }
